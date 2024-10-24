@@ -1,0 +1,102 @@
+{
+  "kind": "collectionType",
+  "collectionName": "profile_items",
+  "info": {
+    "singularName": "profile-item",
+    "pluralName": "profile-items",
+    "displayName": "ProfileItem",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "description": {
+      "type": "text"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "completionDate": {
+      "type": "date"
+    },
+    "clientName": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "category": {
+      "type": "string"
+    },
+    "coverimage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "problems": {
+      "type": "text"
+    },
+    "challenges": {
+      "type": "text"
+    },
+    "solutions": {
+      "type": "text"
+    },
+    "about": {
+      "type": "blocks"
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "timeline": {
+      "type": "string"
+    },
+    "services": {
+      "type": "json"
+    },
+    "testimonial": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.reviewcard"
+    },
+    "portfolio": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::portfolio.portfolio",
+      "inversedBy": "profile_items"
+    }
+  }
+}

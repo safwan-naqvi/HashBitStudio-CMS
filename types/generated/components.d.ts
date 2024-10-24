@@ -35,7 +35,7 @@ export interface SharedRichText extends Struct.ComponentSchema {
     description: '';
   };
   attributes: {
-    body: Schema.Attribute.RichText;
+    body: Schema.Attribute.Blocks;
   };
 }
 
@@ -62,6 +62,20 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsReviewcard extends Struct.ComponentSchema {
+  collectionName: 'components_components_reviewcards';
+  info: {
+    displayName: 'Reviewcard';
+    icon: 'cog';
+  };
+  attributes: {
+    testimonial: Schema.Attribute.Text;
+    avatar: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    client: Schema.Attribute.String;
+    designation: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -70,6 +84,7 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.quote': SharedQuote;
       'shared.media': SharedMedia;
+      'components.reviewcard': ComponentsReviewcard;
     }
   }
 }

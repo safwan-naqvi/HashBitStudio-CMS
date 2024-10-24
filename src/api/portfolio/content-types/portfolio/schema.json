@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "portfolios",
+  "info": {
+    "singularName": "portfolio",
+    "pluralName": "portfolios",
+    "displayName": "Portfolio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "profile_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::profile-item.profile-item",
+      "mappedBy": "portfolio"
+    }
+  }
+}

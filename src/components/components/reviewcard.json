@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_components_reviewcards",
+  "info": {
+    "displayName": "Reviewcard",
+    "icon": "cog"
+  },
+  "options": {},
+  "attributes": {
+    "testimonial": {
+      "type": "text"
+    },
+    "avatar": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "client": {
+      "type": "string"
+    },
+    "designation": {
+      "type": "string"
+    }
+  }
+}
